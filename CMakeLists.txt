@@ -1,3 +1,5 @@
+cmake_policy(SET CMP0002 OLD)
+
 # kdevplatform version
 set(KDEVPLATFORM_VERSION_MAJOR 1)
 set(KDEVPLATFORM_VERSION_MINOR 7)
