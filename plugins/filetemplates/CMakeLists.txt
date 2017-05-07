@@ -15,7 +15,7 @@ set(kdevfiletemplates_PART_SRCS
     testcasespage.cpp
 )
 
-kde4_add_ui_files(kdevfiletemplates_PART_SRCS
+set(kdevfiletemplates_ui_SRCS
     templatepreviewtoolview.ui
     ui/licensechooser.ui
     ui/newclass.ui
@@ -23,6 +23,10 @@ kde4_add_ui_files(kdevfiletemplates_PART_SRCS
     ui/overridevirtuals.ui
     ui/templateselection.ui
     ui/testcases.ui
+)
+
+kde4_add_ui_files(kdevfiletemplates_PART_SRCS
+    ${kdevfiletemplates_ui_SRC}
 )
 
 kde4_add_plugin(kdevfiletemplates ${kdevfiletemplates_PART_SRCS})
@@ -65,9 +69,8 @@ DESTINATION ${DATA_INSTALL_DIR}/kdevcodegen/licenses
 ################
 
 set(test_srcs
-main.cpp
+    main.cpp
     templatepreview.cpp
-
     classidentifierpage.cpp
     classmemberspage.cpp
     defaultcreateclasshelper.cpp
@@ -78,6 +81,10 @@ main.cpp
     templateoptionspage.cpp
     templateselectionpage.cpp
     testcasespage.cpp
+)
+
+kde4_add_ui_files(test_srcs
+    ${kdevfiletemplates_ui_SRC}
 )
 
 kde4_add_executable(testfiletemplates ${test_srcs})
